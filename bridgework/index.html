@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Bridgework onboarding demo for professionals, businesses, freelancers, and lead generators."
+    />
+    <title>Bridgework — Build better connections</title>
+    <link rel="stylesheet" href="../CSS/loginpage.css" />
+    <script src="../JS/loginpage.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#start" aria-label="Bridgework home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none">
+              <path d="M5 20.5 12.2 11l4 5 4.3-6L27 20.5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M5 24h22" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+            </svg>
+          </span>
+          <span>Bridgework</span>
+        </a>
+        <span class="secure-note">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5c0 4.7 2.9 8.8 7 10 4.1-1.2 7-5.3 7-10V6l-7-3Z" /><path d="m9 12 2 2 4-4" /></svg>
+          Secure onboarding
+        </span>
+      </header>
+
+      <section class="progress-wrap" aria-label="Onboarding progress">
+        <ol class="progress-list">
+          <li class="progress-step is-active" data-step-indicator="login"><span>1</span>Get started</li>
+          <li class="progress-step" data-step-indicator="role"><span>2</span>Choose role</li>
+          <li class="progress-step" data-step-indicator="profile"><span>3</span>Your profile</li>
+          <li class="progress-step" data-step-indicator="review"><span>4</span>Review</li>
+        </ol>
+      </section>
+
+      <section class="onboarding-card" id="start">
+        <div class="side-panel" aria-hidden="true">
+          <p class="kicker">ONE NETWORK. BETTER WORK.</p>
+          <h1>Turn great connections into meaningful work.</h1>
+          <p>Bridgework helps trusted people and businesses find their next opportunity together.</p>
+          <div class="quote-card">
+            <div class="quote-mark">“</div>
+            <p>From the first introduction to the final handshake, everything feels more intentional.</p>
+            <div class="quote-person">
+              <span class="avatar">AK</span>
+              <span><strong>Arjun Khanna</strong><small>Independent consultant</small></span>
+            </div>
+          </div>
+          <div class="dot dot-one"></div>
+          <div class="dot dot-two"></div>
+        </div>
+
+        <div class="content-panel">
+          <!-- Screen 1: contact entry -->
+          <section class="screen is-visible" data-screen="login" aria-labelledby="login-title">
+            <span class="step-label">STEP 1 OF 4</span>
+            <h2 id="login-title">Let’s get you connected.</h2>
+            <p class="screen-intro">Enter your contact details to begin your Bridgework profile.</p>
+
+            <form id="login-form" novalidate>
+              <div class="field-grid two-columns">
+                <label class="field">
+                  <span>First name</span>
+                  <input id="first-name" name="firstName" type="text" autocomplete="given-name" placeholder="e.g. Priya" required />
+                </label>
+                <label class="field">
+                  <span>Last name</span>
+                  <input id="last-name" name="lastName" type="text" autocomplete="family-name" placeholder="e.g. Sharma" required />
+                </label>
+              </div>
+              <label class="field">
+                <span>Work email</span>
+                <input id="email" name="email" type="email" autocomplete="email" placeholder="you@company.com" required />
+              </label>
+              <label class="field">
+                <span>Mobile number <em>(optional)</em></span>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+91 98765 43210" />
+              </label>
+
+              <aside class="demo-code" aria-label="Demo access code information">
+                <span class="demo-icon" aria-hidden="true">i</span>
+                <p><strong>Demo prototype:</strong> Enter any 4–8 digit access code. Nothing is sent or stored.</p>
+              </aside>
+              <label class="field">
+                <span>Demo access code</span>
+                <div class="code-field">
+                  <input id="access-code" name="accessCode" inputmode="numeric" autocomplete="one-time-code" maxlength="8" pattern="[0-9]{4,8}" placeholder="Enter any 4–8 digits" required />
+                  <span class="code-lock" aria-hidden="true">⌁</span>
+                </div>
+              </label>
+              <p class="form-error" id="login-error" role="alert"></p>
+              <button class="button button-primary" type="submit">Continue <span aria-hidden="true">→</span></button>
+            </form>
+            <p class="legal-copy">By continuing, you agree to our <a href="#terms">Terms</a> and <a href="#privacy">Privacy Policy</a>.</p>
+          </section>
+
+          <!-- Screen 2: role selection -->
+          <section class="screen" data-screen="role" aria-labelledby="role-title" hidden>
+            <span class="step-label">STEP 2 OF 4</span>
+            <h2 id="role-title">How will you use Bridgework?</h2>
+            <p class="screen-intro">Choose the option that best describes how you want to connect. You can update this later.</p>
+            <form id="role-form" novalidate>
+              <fieldset class="role-options">
+                <legend class="sr-only">Choose your role</legend>
+                <label class="role-card">
+                  <input type="radio" name="role" value="Professional" />
+                  <span class="role-icon blue" aria-hidden="true">✦</span>
+                  <span class="role-text"><strong>Professional</strong><small>Find trusted opportunities and grow your network.</small></span>
+                  <span class="radio-dot" aria-hidden="true"></span>
+                </label>
+                <label class="role-card">
+                  <input type="radio" name="role" value="Business Owner" />
+                  <span class="role-icon green" aria-hidden="true">⌂</span>
+                  <span class="role-text"><strong>Business Owner</strong><small>Meet vetted people who can move your business forward.</small></span>
+                  <span class="radio-dot" aria-hidden="true"></span>
+                </label>
+                <label class="role-card">
+                  <input type="radio" name="role" value="Freelancer" />
+                  <span class="role-icon purple" aria-hidden="true">⌘</span>
+                  <span class="role-text"><strong>Freelancer</strong><small>Showcase your skills and work with ideal clients.</small></span>
+                  <span class="radio-dot" aria-hidden="true"></span>
+                </label>
+                <label class="role-card">
+                  <input type="radio" name="role" value="Lead Generator" />
+                  <span class="role-icon orange" aria-hidden="true">↗</span>
+                  <span class="role-text"><strong>Lead Generator</strong><small>Make valuable introductions and earn through impact.</small></span>
+                  <span class="radio-dot" aria-hidden="true"></span>
+                </label>
+              </fieldset>
+              <p class="form-error" id="role-error" role="alert"></p>
+              <div class="button-row">
+                <button class="button button-secondary" type="button" data-back="login">Back</button>
+                <button class="button button-primary" type="submit">Continue <span aria-hidden="true">→</span></button>
+              </div>
+            </form>
+          </section>
+
+          <!-- Screen 3: dynamic profile -->
+          <section class="screen" data-screen="profile" aria-labelledby="profile-title" hidden>
+            <span class="step-label">STEP 3 OF 4</span>
+            <h2 id="profile-title">Make your profile useful.</h2>
+            <p class="screen-intro" id="profile-intro">Share a few details so the right people can find you.</p>
+            <form id="profile-form" novalidate>
+              <div id="dynamic-profile-fields"></div>
+              <label class="field">
+                <span>Location</span>
+                <input id="location" name="location" type="text" autocomplete="address-level2" placeholder="e.g. Bengaluru, India" required />
+              </label>
+              <label class="field">
+                <span>What are you looking for?</span>
+                <textarea id="looking-for" name="lookingFor" rows="3" maxlength="280" placeholder="Tell us about the connections or opportunities that would help most." required></textarea>
+                <small class="field-hint"><span id="character-count">0</span>/280 characters</small>
+              </label>
+              <p class="form-error" id="profile-error" role="alert"></p>
+              <div class="button-row">
+                <button class="button button-secondary" type="button" data-back="role">Back</button>
+                <button class="button button-primary" type="submit">Review profile <span aria-hidden="true">→</span></button>
+              </div>
+            </form>
+          </section>
+
+          <!-- Screen 4: review -->
+          <section class="screen" data-screen="review" aria-labelledby="review-title" hidden>
+            <span class="step-label">STEP 4 OF 4</span>
+            <h2 id="review-title">Ready to make the right moves?</h2>
+            <p class="screen-intro">Here is the profile you’ll use to start connecting.</p>
+            <div class="profile-preview">
+              <div class="preview-head">
+                <span class="profile-avatar" id="profile-initials">PS</span>
+                <div><h3 id="review-name">Your name</h3><p id="review-role">Your role</p></div>
+                <button class="edit-link" type="button" data-back="profile">Edit</button>
+              </div>
+              <dl class="review-list" id="review-list"></dl>
+            </div>
+            <label class="check-label">
+              <input id="consent" type="checkbox" />
+              <span>I agree to use Bridgework respectfully and make genuine connections.</span>
+            </label>
+            <p class="form-error" id="review-error" role="alert"></p>
+            <div class="button-row">
+              <button class="button button-secondary" type="button" data-back="profile">Back</button>
+              <button class="button button-primary" id="finish-button" type="button">Create my profile <span aria-hidden="true">→</span></button>
+            </div>
+          </section>
+
+          <!-- Success screen -->
+          <section class="screen success-screen" data-screen="success" aria-labelledby="success-title" hidden>
+            <div class="success-symbol" aria-hidden="true">✓</div>
+            <span class="step-label">YOU’RE ALL SET</span>
+            <h2 id="success-title">Welcome to Bridgework, <span id="success-name">there</span>.</h2>
+            <p class="screen-intro">Your demo profile is ready. Start by completing your profile or exploring relevant connections.</p>
+            <div class="success-actions">
+              <button class="button button-primary" type="button" id="explore-button">Explore connections <span aria-hidden="true">→</span></button>
+              <button class="text-button" type="button" id="restart-button">Restart demo</button>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <footer class="page-footer">© <span id="current-year"></span> Bridgework. Built for better introductions.</footer>
+    </main>
+  </body>
+</html>
